@@ -31,11 +31,17 @@ const Navbar = () => {
     <nav className={`navbar fixed top-0 w-full z-50 py-4 px-6 transition-all duration-300 ${scrolled ? 'bg-primary bg-opacity-95 shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <div className="h-10 w-10 mr-2">
+          <div className="h-12 w-12 mr-2">
             <img 
               src="/nexora-logo.png" 
               alt="Nexora Logo" 
               className="h-full w-full object-contain"
+              onError={(e) => {
+                // Fallback if logo doesn't load
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.style.display = 'none';
+              }}
             />
           </div>
           <span className="text-white text-2xl font-bold font-montserrat">NEXORA</span>

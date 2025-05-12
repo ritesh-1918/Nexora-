@@ -1,5 +1,5 @@
 
-import { Github, Instagram, Linkedin } from 'lucide-react';
+import { Linkedin, Instagram, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,8 +15,8 @@ const Footer = () => {
               <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
                 <Linkedin className="h-6 w-6 animate-glow" />
               </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
-                <Github className="h-6 w-6 animate-glow" />
+              <a href="https://wa.me/919948534707" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
+                <Phone className="h-6 w-6 animate-glow" />
               </a>
               <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
                 <Instagram className="h-6 w-6 animate-glow" />
