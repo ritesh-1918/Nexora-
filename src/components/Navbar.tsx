@@ -1,0 +1,47 @@
+
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+  return (
+    <nav className={`navbar fixed top-0 w-full z-50 py-4 px-6 transition-all duration-300 ${scrolled ? 'bg-primary bg-opacity-95 shadow-md' : 'bg-transparent'}`}>
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center">
+          <span className="text-white text-2xl font-bold font-montserrat">NEXORA</span>
+        </div>
+        <div className="hidden md:flex space-x-6">
+          {['Services', 'Portfolio', 'About', 'Contact'].map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase()}`}
+              className="text-white hover:text-secondary font-medium"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+        <Button className="bg-secondary hover:bg-secondary/90 text-primary font-medium btn-hover-effect">
+          Get a Free Consult
+        </Button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
