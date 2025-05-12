@@ -4,9 +4,10 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
-import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import TechStack from '@/components/TechStack';
+import MeetingScheduler from '@/components/MeetingScheduler';
 
 const Index = () => {
   useEffect(() => {
@@ -41,8 +42,9 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Services />
+      <TechStack />
       <Portfolio />
-      <About />
+      <MeetingScheduler />
       <Contact />
       <Footer />
     </div>

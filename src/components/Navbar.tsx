@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showConsultModal, setShowConsultModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,14 +20,28 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const handleConsultClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`navbar fixed top-0 w-full z-50 py-4 px-6 transition-all duration-300 ${scrolled ? 'bg-primary bg-opacity-95 shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
+          <div className="h-10 w-10 mr-2">
+            <img 
+              src="/nexora-logo.png" 
+              alt="Nexora Logo" 
+              className="h-full w-full object-contain"
+            />
+          </div>
           <span className="text-white text-2xl font-bold font-montserrat">NEXORA</span>
         </div>
         <div className="hidden md:flex space-x-6">
-          {['Services', 'Portfolio', 'About', 'Contact'].map((item) => (
+          {['Services', 'Portfolio', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`}
@@ -36,7 +51,10 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <Button className="bg-secondary hover:bg-secondary/90 text-primary font-medium btn-hover-effect">
+        <Button 
+          className="bg-secondary hover:bg-secondary/90 text-primary font-medium btn-hover-effect"
+          onClick={handleConsultClick}
+        >
           Get a Free Consult
         </Button>
       </div>

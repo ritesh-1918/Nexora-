@@ -29,6 +29,13 @@ const Hero = () => {
     };
   }, []);
 
+  const handleConsultClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section 
       id="hero" 
@@ -49,6 +56,7 @@ const Hero = () => {
           <Button 
             className="bg-secondary hover:bg-secondary/90 text-primary btn-hover-effect text-lg py-6 px-8 flex items-center"
             size="lg"
+            onClick={handleConsultClick}
           >
             Get a Free Consult
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -57,9 +65,11 @@ const Hero = () => {
         
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="logo-3d transition-all duration-300 w-64 h-64 relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-9xl font-black text-secondary opacity-80">N</div>
-            </div>
+            <img 
+              src="/nexora-logo.png" 
+              alt="Nexora Logo" 
+              className="w-48 h-48 object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform -rotate-45">
               <div className="w-40 h-2 bg-accent rounded-full animate-float"></div>
             </div>

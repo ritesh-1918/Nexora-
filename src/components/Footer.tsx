@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Youtube } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,14 +12,14 @@ const Footer = () => {
               Innovating the next era of technology solutions for businesses worldwide.
             </p>
             <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-secondary transition-colors duration-300">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
                 <Linkedin className="h-6 w-6 animate-glow" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-secondary transition-colors duration-300">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
                 <Github className="h-6 w-6 animate-glow" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-secondary transition-colors duration-300">
-                <Youtube className="h-6 w-6 animate-glow" />
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary transition-colors duration-300">
+                <Instagram className="h-6 w-6 animate-glow" />
               </a>
             </div>
           </div>
@@ -27,7 +27,7 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {['Services', 'Portfolio', 'About', 'Contact'].map((item) => (
+              {['Services', 'Portfolio', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
